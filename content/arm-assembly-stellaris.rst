@@ -8,9 +8,10 @@ I have a TI Stellaris development board which has a ARM Cortex-M4F processor. I
 wanted to dive into ARM development and figured starting with assembly would be
 more useful to understand what’s going on and also be helpful for working with
 other ARM boards/chips. So, the TI Stellaris uses the LM4F120H5QR chip
-(datasheet `here <http://www.mouser.com/ds/2/405/lm4f120h5qr-124014.pdf>`__) which is based on the ARM Cortex-M4F processor core. The M4 is
+(datasheet `here <http://www.mouser.com/ds/2/405/lm4f120h5qr-124014.pdf>`__)
+which is based on the ARM Cortex-M4F processor core. The M4 is
 broadly grouped as a Cortex M core which includes the M0 (less powerful) and M3
-(M3 minus DSP features). And the F means that a hardware floating point unit is
+(M4 minus DSP features). And the F means that a hardware floating point unit is
 included.
 
 So, let’s start with a hello world project for microcontrollers: lighting a led
@@ -81,10 +82,10 @@ The final code looks like::
 
         @ addresses
         .equ STACK_TOP, 0x20008000
-        .equ BB_RCGCGPIO_PORTF, 0x43fCC114
+        .equ BB_RCGCGPIO_PORTF, 0x43FCC114
         .equ BB_PORT_F_PIN_1_DIR, 0x424A8004
         .equ BB_PORT_F_PIN_1_DEN, 0x424AA384
-        .equ BB_PORT_F_PIN_1_DATA, 0x424A7f84
+        .equ BB_PORT_F_PIN_1_DATA, 0x424A7F84
     
         @ code
         .text
